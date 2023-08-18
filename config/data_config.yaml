@@ -1,0 +1,4 @@
+movie_data_path: data/movie.csv
+rating_data_path: data/rating.csv
+new_movie_df_path: data/new_movie_df.csv
+new_user_df_path: data/new_user_df.csv

@@ -1,0 +1,6 @@
+embedding_dim: 8
+learning_rate: 0.0015
+batch_size: 32
+num_epochs: 10
+clusters: 10
+data_percent: 1.0
