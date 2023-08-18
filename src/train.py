@@ -5,8 +5,8 @@ from tqdm import tqdm
 import time
 import yaml
 
-from model import RecommenderModel
-from data_loader import load_datasets
+from .model import RecommenderModel
+from .data_loader import load_datasets
 
 
 def train_model(
@@ -132,13 +132,13 @@ def train():
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     # Initialize your model, optimizer, and loss function
-    model = RecommenderModel(num_users, num_movies, embedding_dim)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+    modell = RecommenderModel(num_users, num_movies, embedding_dim)
+    optimizer = torch.optim.AdamW(modell.parameters(), lr=learning_rate)
     loss_function = torch.nn.MSELoss()
 
     # Train the model
     train_model(
-        model, dataloader, optimizer, loss_function, num_epochs, device, data_percent
+        modell, dataloader, optimizer, loss_function, num_epochs, device, data_percent
     )
 
 

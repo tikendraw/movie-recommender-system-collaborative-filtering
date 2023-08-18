@@ -8,8 +8,8 @@ class MovieRatingDataset(Dataset):
     def __init__(self, df):
         self.df = df.copy()
 
-        self.num_users = len(df.userId.nunique())
-        self.num_movies = len(df.movieId.nunique())
+        self.num_users = df.userId.nunique()
+        self.num_movies = df.movieId.nunique()
 
     def __len__(self):
         return len(self.df)

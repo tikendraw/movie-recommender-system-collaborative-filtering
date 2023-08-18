@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from data_loader import MovieRatingData
+from .data_loader import MovieRatingData
 
 
 def find_similar_movies(target_movie_embedding, all_movie_embeddings, top_n=5):
