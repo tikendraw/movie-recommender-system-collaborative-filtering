@@ -5,8 +5,8 @@ from tqdm import tqdm
 import time
 import yaml
 
-from .model import RecommenderModel
-from .data_loader import load_datasets
+from src.model import RecommenderModel
+from src.data_loader import load_datasets
 
 
 def train_model(
@@ -135,11 +135,15 @@ def train():
     modell = RecommenderModel(num_users, num_movies, embedding_dim)
     optimizer = torch.optim.AdamW(modell.parameters(), lr=learning_rate)
     loss_function = torch.nn.MSELoss()
+    model_path = ("models/model.pth")  # Set the correct model path
+    modell.load_model(model_path)
+
 
     # Train the model
     train_model(
         modell, dataloader, optimizer, loss_function, num_epochs, device, data_percent
     )
+    modell.save_model(model_path)
 
 
 if __name__ == "__main__":
