@@ -96,7 +96,7 @@ def train():
     with open('config/data_config.yaml', 'r') as data_config_file:
         data_config = yaml.safe_load(data_config_file)
 
-    train_dataset = load_datasets(data_config)
+    train_dataset, _ = load_datasets(data_config)
     dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
     num_users = train_dataset.num_users

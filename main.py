@@ -10,11 +10,12 @@ def main():
     with open('config/data_config.yaml', 'r') as data_config_file:
         data_config = yaml.safe_load(data_config_file)
 
-    train_dataset = load_datasets(data_config)
+    train_dataset, movie_rating_data = load_datasets(data_config)
     num_users = train_dataset.num_users
     num_movies = train_dataset.num_movies
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     new_movie_df = pd.read_csv(data_config['new_movie_df_path'])
+    
     # Load model and configurations
     with open('config/hyperparameters.yaml', 'r') as config_file:
         hyperparameters = yaml.safe_load(config_file)
@@ -33,7 +34,7 @@ def main():
     ]
 
     for idx, row in search_results.iterrows():
-        similar_movies = more_movies(row['movieId'], train_dataset.movieId2idx, train_dataset.idx2movieId, new_movie_df, model, device=device, n = 10)
+        similar_movies = more_movies(row['movieId'], movie_rating_data.movieId2idx, train_dataset.idx2movieId, new_movie_df, model, device=device, n = 10)
         print(f"For movie '{row['title']}' (ID: {row['movieId']}):")
         for i, movie_title in enumerate(similar_movies, start=1):
             print(f"{i}. {movie_title}")
