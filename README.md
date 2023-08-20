@@ -7,10 +7,10 @@ A movie recommender system based on item-collaborative-filtering implemented usi
 
 - [Concept](#concept)
 - [Usefulness](#usefulness)
+- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -27,9 +27,9 @@ The movie recommender system uses collaborative filtering to recommend movies to
 - **Enhanced User Experience:** By suggesting relevant movies, the system enhances the user experience and encourages more engagement with the platform.
 
 
-## Project Organization
+## Project Structure
 ------------
-
+```
 ├── config
 │   ├── data_config.yaml
 │   └── hyperparameters.yaml
@@ -61,11 +61,7 @@ The movie recommender system uses collaborative filtering to recommend movies to
 │   └── model.py
 ├── tox.ini
 └── train.py
-
-
-
-
---------
+```
 
 ## Getting Started
 
