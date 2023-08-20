@@ -42,23 +42,23 @@ The movie recommender system uses collaborative filtering to recommend movies to
 │   ├── plot_embedding.csv
 │   ├── rating.csv
 │   └── tag.csv
-├── LICENSE
-├── main.py
 ├── models
 │   └── model.pth
 ├── notebooks
 │   ├── main.py
 │   ├── recommeder_nb.ipynb
 │   └── recommeder_nb_main.ipynb
-├── pre-commit.sh
-├── README.md
-├── requirements.txt
-├── setup.py
 ├── src
 │   ├── data_loader.py
 │   ├── inference.py
 │   ├── __init__.py
 │   └── model.py
+├── LICENSE
+├── main.py
+├── pre-commit.sh
+├── README.md
+├── requirements.txt
+├── setup.py
 ├── tox.ini
 └── train.py
 ```
@@ -93,7 +93,11 @@ python main.py
 ```
 
 ## Contribution
+
 Contributions are welcome! Feel free to open issues and submit pull requests for improvements.
 
-currently on working on different deep learning projects. But i intend to make an actual movie recommending website and implement all sorts of recommendation, feel free to approach and contribute to the project.
+I am currently working on different deep learning projects. However, my intention is to create an actual movie recommendation website and implement various types of recommendations. If you're interested, feel free to approach and contribute to the project.
+
+---
+_
 
